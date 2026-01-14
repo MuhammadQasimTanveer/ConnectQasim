@@ -7,6 +7,7 @@ import Contact from './Pages/Contact'
 import Service from './Pages/Service'
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
+import ProjectDetail from "./Components/ProjectDetail";
 import { Routes, Route} from 'react-router-dom'
 import ScrollToTop from './components/ScrollToTop'
 
@@ -27,6 +28,7 @@ function App()
          <Route path="/about" element={<About/>} />
          <Route path="/services" element={<Service/>} />
          <Route path="/projects" element={<Project/>} />
+         <Route path="/projects/:prj" element={<ProjectDetail />} />
          <Route path="/contact" element={<Contact/>} />
       </Routes>
 

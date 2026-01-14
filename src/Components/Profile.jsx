@@ -8,9 +8,7 @@ import 'swiper/css';
 
 const summary = [
     `I'm <span class="text-(--primary-color)/80 font-normal">Muhammad Qasim</span>, a full-stack developer and UI/UX designer specializing in <span class="text-(--primary-color)/80 font-normal">web apps</span>, and <span class="text-(--primary-color)/80 font-normal">.NET desktop apps</span>. I focus on combining design with functional software to create clear and consistent solutions.`,
-
     `I translate designs from <span class="text-(--primary-color)/80 font-normal">Figma</span> into interactive prototypes and functional interfaces using <span class="text-(--primary-color)/80 font-normal">React</span>, <span class="text-(--primary-color)/80 font-normal">Next.js</span>, and <span class="text-(--primary-color)/80 font-normal">Tailwind CSS</span>, integrating them with <span class="text-(--primary-color)/80 font-normal">Node.js</span>, <span class="text-(--primary-color)/80 font-normal">Express</span>, and <span class="text-(--primary-color)/80 font-normal">MongoDB</span>. I build clean, maintainable code with reusable components, streamlining development workflows for consistent and reliable applications. `,
-
     `My work emphasizes creating coherent solutions that balance <span class="text-(--primary-color)/80 font-normal">functionality</span> and <span class="text-(--primary-color)/80 font-normal">usability</span>, delivering real value to users, streamlining workflows, and generating a <span class="text-(--primary-color)/80 font-normal">meaningful impact</span>.`
 ];
 
