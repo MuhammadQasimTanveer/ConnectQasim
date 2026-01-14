@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
+@import "tailwindcss";
+@plugin "daisyui";
+
+:root{
+    --body-color: #0b0b0b;
+    --dark-color: #24272E;
+    --border-color: #1f1f1f;
+    --text-color: #a1a1aa;
+    --subtext-color: #6a7282;
+    --primary-color: #ffffff;
+    --secondary-color: #5B78F5;
+    --secondary-rgb: 91 120 245;
+    --font-body: 'Poppins', sans-serif;
+    --font-signature: "Allura", cursive;
+}
+
+body{
+  overflow-x: hidden;
+  position: relative;
+  font-family: var(--font-body);
+  background-color: var(--body-color);
+  scroll-behavior: smooth;
+}
