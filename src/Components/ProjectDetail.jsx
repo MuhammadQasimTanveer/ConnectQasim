@@ -1,21 +1,18 @@
 import React, { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { projects } from "../utils/data";
 
 const ProjectDetail = () => {
   const { prj } = useParams();
-  const navigate = useNavigate();
   const [project, setProject] = useState(null);
 
   useEffect(() => {
     const found = projects.find(p => p.slug === prj);
-    if (!found) {
-      navigate("/projects");
-    }
-    else {
+    if (found) 
+    {
       setProject(found);
     }
-  }, [prj, navigate]);
+  }, [prj]);
 
   if (!project) return null;
 

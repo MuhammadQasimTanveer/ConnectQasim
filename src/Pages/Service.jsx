@@ -1,15 +1,18 @@
 import React from 'react'
 import CTA from '../Components/CTA'
-import Footer from '../Components/Footer'
 import Header from '../Components/Header'
+import Navbar from '../Components/Navbar'
+import Footer from '../Components/Footer'
 import Offering from '../Components/Offering'
 
 const Service = () => {
   return (
     <>
-      <Header />
+      <Header/>
+      <Navbar/>
       <Offering/>
       <CTA/>
+      <Footer/>
     </>
   )
 }

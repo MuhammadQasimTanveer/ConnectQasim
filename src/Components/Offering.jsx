@@ -1,6 +1,6 @@
 import React from "react";
-import { Globe, MonitorPlay, Server, Palette, MoveRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Globe, MonitorPlay, Server, Palette, MoveRight } from "lucide-react";
 
 const services = [
   {

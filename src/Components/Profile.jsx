@@ -1,9 +1,9 @@
 import React from 'react'
 import { experience, education, frontend, coreDev, deployment, designing } from '../utils/data';
 // import portrait from "../assets/Images/personal-img.png";
-import { Download } from 'lucide-react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
+import { Download } from 'lucide-react';
 import 'swiper/css';
 
 const summary = [

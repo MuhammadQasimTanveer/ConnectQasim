@@ -4,7 +4,6 @@ import { Linkedin, Github, SendHorizontal } from "lucide-react";
 const ContactForm = () => {
   return (
     <div className='max-w-6xl mx-auto flex flex-col md:flex-row items-start gap-10 md:gap-20 p-10 md:py-25'>
-
       <div className='w-full'>
         <h2 className='text-4xl md:text-[44px] font-medium text-(--secondary-color)/80 mb-10'>
           <span className='text-(--primary-color)'> Let's build something </span>

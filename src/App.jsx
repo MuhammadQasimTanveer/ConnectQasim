@@ -5,11 +5,10 @@ import initLenis from './lib/lenis'
 import Project from './Pages/Project'
 import Contact from './Pages/Contact'
 import Service from './Pages/Service'
-import Navbar from "./Components/Navbar";
-import Footer from "./Components/Footer";
-import ProjectDetail from "./Components/ProjectDetail";
+import NotFound from './Components/NotFound'
 import { Routes, Route} from 'react-router-dom'
 import ScrollToTop from './components/ScrollToTop'
+import ProjectDetail from "./Components/ProjectDetail";
 
 function App()
 {
@@ -21,7 +20,6 @@ function App()
   return (
     <div className='bg-(--body-color) min-h-screen h-auto w-full'>
       <ScrollToTop/>
-      <Navbar/>
 
       <Routes>    
         <Route path="/" element={<Home />} />
@@ -30,9 +28,8 @@ function App()
          <Route path="/projects" element={<Project/>} />
          <Route path="/projects/:prj" element={<ProjectDetail />} />
          <Route path="/contact" element={<Contact/>} />
+         <Route path="/*" element={<NotFound />} />
       </Routes>
-
-      <Footer/>
     </div>
   )
 }
