@@ -74,10 +74,10 @@ export const projects = [
   {
     id: 6,
     category: ".NET Desktop",
-    slug: "tailorMS",
-    title: "Tailor Management System",
+    slug: "tailormanager",
+    title: "Tailor Manager",
     tools: [".NET", "C#", "WinForms", "SQL"],
-    description: "The Tailor Management System is a modern solution designed to help tailors manage their daily work efficiently, replacing paper-based records with digital tools, allowing users to handle customer information, track suit orders, and manage billing in one place, while improving organization, reducing mistakes, and providing a clear overview of pending, ready, and delivered orders to help tailors plan and deliver timely results.",
+    description: "The Tailor Manager is a modern solution designed to help tailors manage their daily work efficiently, replacing paper-based records with digital tools, allowing users to handle customer information, track suit orders, and manage billing in one place, while improving organization, reducing mistakes, and providing a clear overview of pending, ready, and delivered orders to help tailors plan and deliver timely results.",
     about: "The system allows tailors to add customers with measurements, view and search records, update information quickly, and track orders from creation to delivery, supporting receipt generation, suit detail updates, and printing final bills, while the dashboard shows real-time counts, notifications provide feedback, and interactive controls make navigation simple, ensuring accuracy, reducing repetitive tasks, and providing a reliable way to manage the business.",
     implementation:"The implementation focused on a seamless workflow, with secure login for authorized access, dynamic forms with validation to prevent errors, status indicators and dashboards showing order progress, real-time updates and notifications keeping users informed, and a structured layout connecting customer data, orders, and billing to ensure smooth, efficient, and clear daily operations.",
     image: ""

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { projects } from "../utils/data";
+import Navbar from "./Navbar";
 
 const ProjectDetail = () => {
   const { prj } = useParams();
@@ -17,6 +18,9 @@ const ProjectDetail = () => {
   if (!project) return null;
 
   return (
+  <>
+    <Navbar />
+
     <div className="max-w-4xl mx-auto px-6 py-14">
       <h1 className="text-3xl font-semibold text-(--primary-color) mb-4">{project.title}</h1>
       <p className="text-(--secondary-color) mb-6">{project.category}</p>
@@ -29,7 +33,7 @@ const ProjectDetail = () => {
         ))}
       </div>
 
-      <div className="w-full h:[160px] md:h-125 overflow-hidden bg-(--secondary-color)/20 rounded-2xl ">
+      <div className="w-full h:[160px] md:h-125 overflow-hidden bg-(--border-color)/20 rounded-2xl ">
         <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
       </div>
 
@@ -37,6 +41,7 @@ const ProjectDetail = () => {
       <p className="text-(--text-color)/90 font-light mt-6">{project.about}</p>
       <p className="text-(--text-color)/90 font-light mt-6">{project.implementation}</p>
     </div>
-  );
+  </>
+);
 };
 export default ProjectDetail;
