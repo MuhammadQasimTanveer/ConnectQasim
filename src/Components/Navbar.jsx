@@ -18,7 +18,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="fixed right-10 top-1/2 -translate-y-1/2 z-80 hidden md:flex">
+      <nav className="fixed right-10 top-1/2 -translate-y-1/2 z-85 hidden md:flex">
         <div className="bg-black/60 backdrop-blur-xl border border-(--border-color) rounded-full p-1.5">
           <div className="flex flex-col items-center gap-7 ">
             {navItems.map((item, index) => (
@@ -39,7 +39,7 @@ const Navbar = () => {
         </div>
       </nav>
 
-      <nav className="fixed bottom-6 left-1/2 -translate-x-1/2 z-80 md:hidden">
+      <nav className="fixed bottom-6 left-1/2 -translate-x-1/2 z-85 md:hidden">
         <div className="bg-black/60 backdrop-blur-xl border border-(--border-color) rounded-full p-1.5">
           <div className="flex items-center gap-5">
             {navItems.map((item, index) => (
