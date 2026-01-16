@@ -1,7 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Linkedin, Github, SendHorizontal } from "lucide-react";
 
 const ContactForm = () => {
+
+  const [formData, setFormData] = useState({Name: '', Email: '', Subject: '',Message: ''});
+  const [status, setStatus] = useState(""); 
+  
+  const handleChange = (e) => {
+    setStatus("");
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => 
+  {
+    e.preventDefault();
+    setStatus("Message sent successfully!");
+    setFormData({ Name: '',Email: '', Subject: '', Message: ''});
+  };
+
   return (
     <div className='max-w-6xl mx-auto flex flex-col md:flex-row items-start gap-10 md:gap-20 p-10 md:py-25'>
       <div className='w-full'>
@@ -27,19 +43,23 @@ const ContactForm = () => {
       </div>
 
       <div className='w-full'>
-        <form className="flex flex-col gap-6">
+        <form onSubmit={handleSubmit} className="flex flex-col gap-6">
           <div className="flex flex-col md:flex-row gap-6">
-            <input type="text" placeholder="Your Name *"
+            <input type="text" placeholder="Your Name *" name="Name"
+              required value={formData.Name} onChange={handleChange}
               className="w-full font-light text-(--primary-color)/90 rounded-md border border-(--dark-color) p-4 focus:outline-none focus:border-(--secondary-color) transition"
             />
-            <input type="email" placeholder="Your Email *"
+            <input type="email" placeholder="Your Email *" name="Email"
+              required value={formData.Email} onChange={handleChange}
               className="w-full font-light text-(--primary-color)/90 rounded-md border border-(--dark-color) p-4 focus:outline-none focus:border-(--secondary-color) transition"
             />
           </div>
-          <input type="text" placeholder="Your Subject *"
+          <input type="text" placeholder="Your Subject *" name="Subject"
+            required value={formData.Subject} onChange={handleChange}
             className="w-full font-light text-(--primary-color)/90 rounded-md border border-(--dark-color) p-4 focus:outline-none focus:border-(--secondary-color) transition"
           />
-          <textarea rows="6" placeholder="Your Message *"
+          <textarea rows="6" placeholder="Your Message *" name="Message"
+            required value={formData.Message} onChange={handleChange}
             className="w-full font-light text-(--primary-color)/90 rounded-md border border-(--dark-color) p-4 focus:outline-none focus:border-(--secondary-color) transition"
           />
 
@@ -49,6 +69,7 @@ const ContactForm = () => {
               <SendHorizontal className="w-5 h-5 text-(--primary-color) group-hover:text-(--secondary-color)" />
             </div>
           </button>
+          {status && ( <p className="text-green-500/70 font-light mt-2"> {status} </p> )}
         </form>
       </div>
     </div>
