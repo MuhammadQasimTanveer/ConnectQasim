@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import logo from "../assets/Images/logo.png";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Header = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
+  const location = "Rawalpindi, Pakistan";
 
   useEffect(() => {
     const timer = setInterval(() => setCurrentTime(new Date()), 1000);
@@ -13,17 +15,21 @@ const Header = () => {
   const formattedTime = currentTime.toLocaleTimeString('en-US', {
     hour: '2-digit', minute: '2-digit', hour12: true
   });
-  const location = "Islamabad, Pakistan";
 
   return (
-    <header className="w-full border-b border-(--border-color)/80 px-6 md:px-25 py-1 ">
+    <motion.header
+      className="w-full border-b border-(--border-color)/80 px-6 md:px-25 py-1"
+      initial={{ y: -20, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
       <div className="flex items-center justify-between md:px-9">
-
-        <div className="cursor-pointer"> <img src={logo} alt="Logo" width={60} /> </div>
-
+        <div className="cursor-pointer">
+          <img src={logo} alt="Logo" width={60} />
+        </div>
         <div className="hidden sm:flex flex-col items-end text-sm font-normal text-(--primary-color) gap-1">
-          <span>{location} </span>
-          <span> {formattedTime} </span>
+          <span>{location}</span>
+          <span>{formattedTime}</span>
         </div>
 
         <Link to="/contact"
@@ -32,7 +38,7 @@ const Header = () => {
           Let's talk
         </Link>
       </div>
-    </header>
+    </motion.header>
   );
 };
 export default Header;

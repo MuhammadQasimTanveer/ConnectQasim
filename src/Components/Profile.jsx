@@ -1,9 +1,9 @@
 import React from 'react'
 import { experience, education, frontend, coreDev, deployment, designing } from '../utils/data';
-// import portrait from "../assets/Images/personal-img.png";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import { Download } from 'lucide-react';
+import { motion } from "framer-motion";
 import 'swiper/css';
 
 const summary = [
@@ -33,40 +33,81 @@ const Card = ({ title, tools }) => {
 const Profile = () => {
     return (
         <div className="max-w-6xl mx-auto px-6 py-10">
-            <div className="flex flex-row items-start gap-12 py-10">
-                <div className="hidden md:flex w-70 lg:w-80 shrink-0 flex-col items-center bg-(--dark-color)/35 rounded-4xl p-6">
-                    <div className="w-full rounded-4xl">
-                        <img src="" alt="Muhammad Qasim" className="w-full h-auto rounded-[36px]" />
+            <div className="flex flex-col md:flex-row items-start gap-12 py-10">
+                <motion.div
+                    className="hidden md:flex w-70 lg:w-80 shrink-0 flex-col items-center bg-(--dark-color)/35 rounded-4xl p-5"
+                    initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }} transition={{ duration: 0.6 }}
+                >
+                    <div className="w-full rounded-3xl overflow-hidden">
+                        <motion.img
+                            src="" alt="Muhammad Qasim"  className="w-full h-full"
+                            initial={{ scale: 0.95, opacity: 0 }} whileInView={{ scale: 1, opacity: 1 }}
+                            transition={{ duration: 0.6, ease: "easeOut" }}
+                        />
                     </div>
-                    <span className="text-base font-normal text-center text-(--primary-color)/60 mt-8"> qasimtanvir.qt84@gmail.com </span>
-                </div>
+                    <motion.span
+                        className="text-base font-normal text-center text-(--primary-color)/60 mt-8"
+                        initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                    >
+                        qasimtanvir.qt84@gmail.com
+                    </motion.span>
+                </motion.div>
 
-                <div className="flex flex-col items-start md:mr-4">
-                    <h2 className="text-3xl text-(--primary-color) mb-7">Summary</h2>
+                <motion.div
+                    className="flex flex-col items-start md:mr-4"
+                    initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }} transition={{ duration: 0.6 }}
+                >
+                    <motion.h2
+                        className="text-3xl text-(--primary-color) mb-7"
+                        initial={{ opacity: 0, y: -20 }} whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5 }} viewport={{ once: true }}
+                    >
+                        Summary
+                    </motion.h2>
+
                     <div className="space-y-4 text-base font-light text-(--text-color) mb-6">
                         {summary.map((para, index) => (
-                            <p key={index} dangerouslySetInnerHTML={{ __html: para }}
+                            <motion.p
+                                key={index}
+                                dangerouslySetInnerHTML={{ __html: para }}
                                 className="text-justify leading-6.5"
+                                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.7, delay: index * 0.1 }} viewport={{ once: true }}
                             />
                         ))}
                     </div>
+
                     <a href="/resume.pdf" download="Muhammad_Qasim.pdf"
                         className="inline-flex w-auto items-center gap-4 px-6 py-3 border border-blue-500 rounded-lg text-(--primary-color) transform transition-transform duration-200 hover:-translate-y-1 hover:bg-transparent group"
                     >
                         <Download className="w-5 h-5 text-blue-500/50 group-hover:animate-bounce" />
                         Download Resume
                     </a>
-                </div>
+                </motion.div>
             </div>
 
             <div className='flex flex-col md:flex-row gap-10 py-10'>
                 <div className='md:w-1/2 w-full'>
-                    <h2 className="text-2xl font-normal text-(--primary-color)">Education</h2>
+                    <motion.h2
+                        className="text-2xl font-normal text-(--primary-color)"
+                        initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }} transition={{ duration: 0.5 }}
+                    >
+                        Education
+                    </motion.h2>
+
                     {education.map((edu, index) => {
                         const Icon = edu.icon;
                         return (
-                            <div key={index}
-                                className='flex flex-row items-start justify-start p-8 gap-6 mt-6 bg-(--border-color)/20 border border-(--border-color) hover:border-(--secondary-color)/40 transition-all duration-300 rounded-xl cursor-pointer'>
+                            <motion.div
+                                key={index}
+                                className='flex flex-row items-start justify-start p-8 gap-6 mt-6 bg-(--border-color)/20 border border-(--border-color) hover:border-(--secondary-color)/40 transition-all duration-300 rounded-xl cursor-pointer'
+                                initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }} transition={{ duration: 0.6, delay: index * 0.15 }}
+                            >
                                 <span>
                                     <Icon className='w-9 h-9 text-(--primary-color)/80' />
                                 </span>
@@ -76,19 +117,28 @@ const Profile = () => {
                                     <p className='text-sm text-(--text-color)/70 mt-1'>{edu.institute}</p>
                                     <p className='text-base text-(--text-color) mt-4'>{edu.info}</p>
                                 </div>
-                            </div>
+                            </motion.div>
                         );
                     })}
                 </div>
 
                 <div className='md:w-1/2 w-full'>
-                    <h2 className="text-2xl font-normal text-(--primary-color)">Experience</h2>
+                    <motion.h2
+                        className="text-2xl font-normal text-(--primary-color)"
+                        initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }} transition={{ duration: 0.5 }}
+                    >
+                        Experience
+                    </motion.h2>
+
                     {experience.map((exp, index) => {
-                        const Icon = exp.icon;;
+                        const Icon = exp.icon;
                         return (
-                            <div
+                            <motion.div
                                 key={index}
-                                className='flex flex-row items-start justify-start p-8 gap-6 mt-6 bg-(--border-color)/20 border border-(--border-color) hover:border-(--secondary-color)/40 transform-all duration-300 rounded-xl cursor-pointer'
+                                className='flex flex-row items-start justify-start p-8 gap-6 mt-6 bg-(--border-color)/20 border border-(--border-color) hover:border-(--secondary-color)/40 transition-all duration-300 rounded-xl cursor-pointer'
+                                initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }} transition={{ duration: 0.6, delay: index * 0.15 }}
                             >
                                 <span>
                                     <Icon className='w-9 h-9 text-(--primary-color)/80' />
@@ -99,7 +149,7 @@ const Profile = () => {
                                     <p className='text-sm text-(--text-color)/70 mt-1'>{exp.company}</p>
                                     <p className='text-base text-(--text-color) mt-4'>{exp.info}</p>
                                 </div>
-                            </div>
+                            </motion.div>
                         );
                     })}
                 </div>

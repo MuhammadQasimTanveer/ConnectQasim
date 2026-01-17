@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import { Globe, MonitorPlay, Server, Palette, MoveRight } from "lucide-react";
 
 const services = [
@@ -25,31 +26,47 @@ const services = [
   }
 ];
 
+const container = {
+  hidden: {}, show: { transition: { staggerChildren: 0.12 } }
+};
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" }  }
+};
+
 const Offering = () => {
   return (
-    <div className="relative max-w-5xl mx-auto py-20 px-6">
+    <motion.div
+      initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} variants={container}
+      className="relative max-w-5xl mx-auto py-20 px-6"
+    >
       <div className="absolute top-8 left-[40%] w-[80%] h-70 blur-3xl opacity-27 md:opacity-17 rounded-full
-          bg-linear-to-r from-(--secondary-color)/70 via-(--dark-color) to-(--border-color) pointer-events-none ">
+        bg-linear-to-r from-(--secondary-color)/70 via-(--dark-color) to-(--border-color) pointer-events-none">
       </div>
 
       <div className="relative z-10">
-        <div className="mb-18 text-center">
+        <motion.div variants={fadeUp} className="mb-18 text-center">
           <h2 className="text-3xl md:text-4xl font-medium text-(--primary-color) mb-4">
             What I <span className="text-(--secondary-color)">Offer?</span>
           </h2>
           <p className="max-w-2xl text-(--primary-color)/80 mx-auto">
-            Providing tailored digital solutions that combine thoughtful design, reliable development, and practical results for real-world needs.
+            Providing tailored digital solutions that combine thoughtful design,reliable development, and practical results for real-world needs.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <motion.div variants={container} className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {services.map((item, index) => {
             const Icon = item.icon;
             return (
-              <div key={index} className="flex flex-col justify-between bg-(--border-color)/30 border border-(--border-color) rounded-2xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <motion.div
+                key={index} variants={fadeUp}
+                whileHover={{ y: -6, scale: 1.01 }} transition={{ type: "spring", stiffness: 220, damping: 18 }}
+                className="flex flex-col justify-between bg-(--border-color)/30 border border-(--border-color) rounded-2xl p-7"
+              >
                 <div>
                   <Icon className="w-7 h-7 text-(--secondary-color)" />
-                  <h3 className="text-lg text-(--text-color)/90 font-medium mt-6 mb-3"> {item.title} </h3>
+                  <h3 className="text-lg text-(--text-color)/90 font-medium mt-6 mb-3"> {item.title}</h3>
                   <p className="text-sm text-(--primary-color)/80 mb-3"> {item.desc} </p>
                 </div>
 
@@ -58,12 +75,12 @@ const Offering = () => {
                     <MoveRight className="w-7 h-7 text-(--secondary-color)/50" />
                   </Link>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 export default Offering;
