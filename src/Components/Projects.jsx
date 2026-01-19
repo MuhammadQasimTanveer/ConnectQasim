@@ -25,7 +25,7 @@ const Projects = () => {
             </motion.h2>
 
             <motion.div
-                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
                 variants={container} initial="hidden"
                 whileInView="show" viewport={{ once: true, amount: 0.1 }}
             >
@@ -35,9 +35,9 @@ const Projects = () => {
                             to={`/projects/${project.slug}`}
                             className="flex flex-col rounded-2xl bg-(--border-color)/20 border border-zinc-800/80 overflow-hidden"
                         >
-                            <div className="w-full h-55 md:h-60 overflow-hidden p-2">
+                            <div className="w-full h-55 md:h-59 overflow-hidden p-2">
                                 <img src={project.image} alt={project.title}
-                                    className="w-full h-full object-cover opacity-97 rounded-t-2xl"
+                                    className="w-full h-full opacity-97 rounded-t-[15px]"
                                 />
                             </div>
 

@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import { motion } from "framer-motion";
+import { Link } from 'react-router-dom';
 import { Linkedin, Github, SendHorizontal } from "lucide-react";
 
 const ContactForm = () => {
 
-  const [formData, setFormData] = useState({Name: '', Email: '', Subject: '',Message: ''});
-  const [status, setStatus] = useState(""); 
-  
+  const [formData, setFormData] = useState({ Name: '', Email: '', Subject: '', Message: '' });
+  const [status, setStatus] = useState("");
+
   const handleChange = (e) => {
     setStatus("");
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -15,7 +16,7 @@ const ContactForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus("Message sent successfully!");
-    setFormData({ Name: '',Email: '', Subject: '', Message: ''});
+    setFormData({ Name: '', Email: '', Subject: '', Message: '' });
   };
 
   return (
@@ -40,7 +41,7 @@ const ContactForm = () => {
 
         <motion.p
           className="max-w-xl text-base text-(--subtext-color) mb-6"
-          initial={{ opacity: 0 }}  whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
           viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.3 }}
         >
           Reach out anytime - I'm open to new opportunities and collaborations.
@@ -62,7 +63,7 @@ const ContactForm = () => {
           initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
           viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.5 }}
         >
-          Local Time - Islamabad, PK (UTC+5)
+          Local Time - Rawalpindi, PK (UTC+5)
         </motion.span>
 
         <motion.div
@@ -70,12 +71,20 @@ const ContactForm = () => {
           initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.6 }}
         >
-          <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-            <Linkedin className='text-(--text-color) transition hover:text-[#0077b5] cursor-pointer' />
-          </motion.div>
-          <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-            <Github className='text-(--text-color) transition hover:text-[#6e5494] cursor-pointer' />
-          </motion.div>
+          <Link to="https://github.com/MuhammadQasimTanveer">
+            <motion.div whileHover={{ scale: 1.1, color: "#6e5494" }} whileTap={{ scale: 0.95 }}
+              className="text-(--text-color)"
+            >
+              <Github className="w-6 h-6" />
+            </motion.div>
+          </Link>
+          <Link to="https://www.linkedin.com/in/qasimtanvir04">
+            <motion.div whileHover={{ scale: 1.1, color: "#0077b5" }} whileTap={{ scale: 0.95 }}
+              className="text-(--text-color)"
+            >
+              <Linkedin className="w-6 h-6" />
+            </motion.div>
+          </Link>
         </motion.div>
       </motion.div>
 
@@ -128,7 +137,7 @@ const ContactForm = () => {
               <SendHorizontal className="w-5 h-5 text-(--primary-color) group-hover:text-(--secondary-color)" />
             </div>
           </motion.button>
-          {status && ( <p className="text-green-500/70 font-light mt-2">{status}</p> )}
+          {status && (<p className="text-green-500/70 font-light mt-2">{status}</p>)}
         </form>
       </motion.div>
 

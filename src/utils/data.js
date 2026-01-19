@@ -13,6 +13,11 @@ import vercel from '../assets/Images/vercel.png';
 import git from '../assets/Images/git.png';
 import github from '../assets/Images/github.png';
 import dotnet from '../assets/Images/dotnet.png';
+import resumon from '../assets/Images/project1.png';
+import grocery from '../assets/Images/project2.png';
+import trimlinker from '../assets/Images/project3.png';
+import ecomAnalytics from '../assets/Images/project4.png';
+import tailorMngr from '../assets/Images/project5.png';
 import { MonitorCloud, School, GraduationCap } from 'lucide-react';
 
 export const projects = [
@@ -22,32 +27,32 @@ export const projects = [
     slug: "resumon",
     category: "MERN SaaS",
     tools: [, "React", "Node.js", "MongoDB"],
-    description: "Resumon is a MERN-stack SaaS platform designed to make resume building both professional and effortless. Users can register easily, input their personal and work details, and immediately preview their resume in real-time. By providing customizable templates, the platform ensures that creating an ATS-friendly resume is secure, efficient, and streamlined from start to finish. ",
+    overview: "Resumon is a MERN-stack SaaS platform designed to make resume building both professional and effortless. Users can register easily, input their personal and work details, and immediately preview their resume in real-time. By providing customizable templates, the platform ensures that creating an ATS-friendly resume is secure, efficient, and streamlined from start to finish. ",
     features: ["Manage personal and work details easily", "Live preview of resume in real-time", "Multiple customizable resume templates", "ATS-friendly resume generation", "Export resumes as PDF"],
     implementation: "The implementation focused on providing a seamless flow: MongoDB manages data, Node.js/Express handles authentication and CRUD operations, React delivers dynamic previews, and Tailwind CSS ensures a responsive interface, resulting in a robust and user-friendly platform. ",
-    image: ""
+    image: resumon
   },
   {
     id: 2,
+    category: "UI/UX",
+    slug: "grocerystoreUi",
+    title: "GroceryStoreUI",
+    tools: ["Figma", "User Research", "Prototyping"],
+    overview: "The Grocery Store App is a design-focused platform that organizes products, categories, and the shopping cart clearly. Visual hierarchy and spacing guide users through key actions, and interactive elements support smooth navigation. The interface ensures information is accessible and consistently presented.",
+    features: ["Browse products by category","Search and add items to cart","Dynamic cart updates and feedback","Smooth interactive navigation","Consistent visual hierarchy"],
+    implementation: "The design process began by analyzing user behavior and mapping browsing and cart interactions with wireframes. Prototypes refined layouts, spacing, and interactive feedback, while testing focused on usability and clarity. The final interface is structured, consistent, and supports efficient navigation across devices. ",
+    image: grocery
+  },
+  {
+    id: 3,
     category: "Next.js App",
     slug: "trimlinker",
     title: "TrimLinker",
     tools: ["Next.js", "CSS Modules", "Fetch API"],
-    description: "TrimLinker is a modern link shortening platform built with Next.js, designed to simplify URL management by converting long links into short, shareable ones, providing a clean and efficient experience for users. ",
+    overview: "TrimLinker is a modern link shortening platform built with Next.js, designed to simplify URL management by converting long links into short, shareable ones, providing a clean and efficient experience for users. ",
     features: ["Instantly shorten long URLs", "Copy & share shortened links", "Validate URLs automatically"],
     implementation: "The implementation focused on providing a seamless process from URL input to shortened output, validating links, sending them to an external API, and updating the interface to display the compact URL with confirmation, while maintaining a responsive and reliable user experience.",
-    image: ""
-  },
-  {
-    id: 3,
-    category: "UI/UX",
-    slug: "grocerystoreUI",
-    title: "GroceryStore",
-    tools: ["Figma", "User Research", "Prototyping"],
-    description: "The Grocery Store App is a design-focused platform that organizes products, categories, and the shopping cart clearly. Visual hierarchy and spacing guide users through key actions, and interactive elements support smooth navigation. The interface ensures information is accessible and consistently presented.",
-    features: ["Browse products by category","Search and add items to cart","Dynamic cart updates and feedback","Smooth interactive navigation","Consistent visual hierarchy"],
-    implementation: "The design process began by analyzing user behavior and mapping browsing and cart interactions with wireframes. Prototypes refined layouts, spacing, and interactive feedback, while testing focused on usability and clarity. The final interface is structured, consistent, and supports efficient navigation across devices. ",
-    image: ""
+    image: trimlinker
   },
   {
     id: 4,
@@ -55,32 +60,32 @@ export const projects = [
     slug: "ecommerce-analytics",
     title: "Ecommerce Analytics",
     tools: ["React", "Tailwind", "Chart.js"],
-    description: "The E-commerce Analytics Dashboard is a professional business intelligence solution created to help e-commerce businesses understand their performance clearly, and it focuses on turning complex data into simple, structured insights through visual analytics and organized layouts, which reflects strong skills in designing analytical interfaces that support informed and confident business decisions. ",
+    overview: "The E-commerce Analytics Dashboard is a professional business intelligence solution created to help e-commerce businesses understand their performance clearly, and it focuses on turning complex data into simple, structured insights through visual analytics and organized layouts, which reflects strong skills in designing analytical interfaces that support informed and confident business decisions. ",
     features: ["Analyze customer segments with charts", "View detailed sortable tables", "Filter data by time and segment", "View detailed data in sortable tables"],
     implementation: "Implementation focused on creating a smooth analytical experience with structured layouts, interactive controls, and responsive design. Charts, tables, and filters clearly present data, while usability, consistency, and performance ensure a reliable dashboard.",
-    image: ""
+    image: ecomAnalytics
   },
   {
     id: 5,
-    category: "UI/UX",
-    slug: "resumonui",
-    title: "ResumonUI",
-    tools: ["Figma", "User Research", "Prototyping"],
-    description: "Resumon is a design-focused SaaS platform that helps users create professional resumes easily. The interface is clear and organized, guiding users to focus on their content while keeping layouts consistent. Templates are arranged to look good and stay readable, making every resume both attractive and functional.",
-    features: [ "Preview resumes in real-time", "Customize sections, and fonts", "Templates adapt automatically to content", "Clear and organized interface","Smooth and intuitive workflow"],
-    implementation: "The project started with research on common challenges in resume creation and mapping the workflow with wireframes. Prototypes refined the visual style, typography, and spacing, while iterative feedback helped polish the templates so that the platform is clear, consistent, and easy to use across devices.",
-    image: ""
-  },
-  {
-    id: 6,
     category: ".NET Desktop",
     slug: "tailormanager",
     title: "Tailor Manager",
     tools: [".NET", "C#", "WinForms", "SQL"],
-    description: "Tailor Manager is a digital platform for tailors to streamline daily operations. It lets tailors manage customer profiles and measurements, track suit orders from start to delivery, generate receipts, and update order details. An intuitive dashboard shows active orders and real-time status, while interactive controls simplify navigation.",
+    overview: "Tailor Manager is a digital platform for tailors to streamline daily operations. It lets tailors manage customer profiles and measurements, track suit orders from start to delivery, generate receipts, and update order details. An intuitive dashboard shows active orders and real-time status, while interactive controls simplify navigation.",
     features: ["Manage customer profiles","Track suit orders end-to-end","Generate receipts and update orders","Dashboard with real-time status","Interactive navigation controls"],
     implementation: "The implementation focused on a seamless workflow, with secure login for authorized access, dynamic forms with validation, status indicators and dashboards showing order progress, real-time updates and notifications, and a structured layout connecting customer data, orders, and billing for smooth and efficient operations.",
-    image: ""
+    image: tailorMngr
+  },
+  {
+    id: 6,
+    category: "UI/UX",
+    slug: "resumonUi",
+    title: "ResumonUI",
+    tools: ["Figma", "User Research", "Prototyping"],
+    overview: "Resumon is a design-focused SaaS platform that helps users create professional resumes easily. The interface is clear and organized, guiding users to focus on their content while keeping layouts consistent. Templates are arranged to look good and stay readable, making every resume both attractive and functional.",
+    features: [ "Preview resumes in real-time", "Customize sections, and fonts", "Templates adapt automatically to content", "Clear and organized interface","Smooth and intuitive workflow"],
+    implementation: "The project started with research on common challenges in resume creation and mapping the workflow with wireframes. Prototypes refined the visual style, typography, and spacing, while iterative feedback helped polish the templates so that the platform is clear, consistent, and easy to use across devices.",
+    image: resumon
   }
 ];
 

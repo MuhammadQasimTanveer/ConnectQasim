@@ -31,7 +31,6 @@ const ProjectDetail = () => {
         </div>
 
         <p className="text-(--secondary-color)/70 mb-6">{project.category}</p>
-
         <div className="flex flex-wrap gap-2 mb-6">
           {project.tools.map((tool, index) => (
             <span key={index} className="text-sm font-light text-(--text-color) bg-(--border-color)/80 rounded-full px-4 py-1">
@@ -39,15 +38,14 @@ const ProjectDetail = () => {
             </span>
           ))}
         </div>
-
-        <div className="w-full h:[160px] md:h-120 overflow-hidden bg-(--border-color)/20 rounded-2xl ">
-          <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
+        <div className="w-full h:[160px] md:h-129 overflow-hidden bg-(--border-color)/20 rounded-2xl ">
+          <img src={project.image} alt={project.title} className="w-full h-full"/>
         </div>
 
         <div className="space-y-6 mt-10">
           <div>
             <h3 className="text-lg md:text-xl text-(--primary-color)/90 mb-2"> Overview </h3>
-            <p className="text-sm md:text-base font-light text-(--text-color)/90"> {project.description} </p>
+            <p className="text-sm md:text-base font-light text-(--text-color)/90"> {project.overview} </p>
           </div>
           <div>
             <h3 className="text-lg md:text-xl text-(--primary-color)/90 mb-2"> Features </h3>

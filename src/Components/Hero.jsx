@@ -1,12 +1,11 @@
 import React from 'react';
 import { Globe, MonitorPlay, Server, Palette, Github, Linkedin, ArrowRight, Dot } from "lucide-react";
+import portrait from "../assets/Images/personal-img.png";
 import { Link } from 'react-router-dom';
 import { motion } from "framer-motion";
 import Marquee from "react-fast-marquee";
 
-const services = [
-  "UI/UX Design", "MERN Stack App", "Nextjs App", "SPA's", "Figma", "React App", ".NET Desktop"
-];
+const interests = ["UI/UX Design", "MERN Stack App", "Nextjs App", "SPA's", "Figma", "React App", ".NET Desktop"];
 
 const Hero = () => {
   const image = {
@@ -31,7 +30,7 @@ const Hero = () => {
         initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
       >
         <Marquee autoFill speed={60}>
-          {services.map((item, index) => (
+          {interests.map((item, index) => (
             <div key={index} className="flex items-center font-light text-sm text-(--primary-color) mx-5">
               <Dot className="w-8 h-8 text-(--secondary-color)" />
               <span>{item}</span>
@@ -56,8 +55,7 @@ const Hero = () => {
             <motion.h2
               className="text-3xl md:text-5xl text-(--text-color)" variants={fadeUp}
             >
-              I'm <span className="text-[#FF6B6B]/50"> Muhammad Qasim </span>
-              Working as Full Stack Engineer & UI Designer
+              I'm <span className="text-[#FF6B6B]/50">Muhammad Qasim</span> Working as Full Stack Engineer & UI Designer
             </motion.h2>
 
             <motion.p
@@ -103,7 +101,7 @@ const Hero = () => {
           className="flex justify-center" variants={image} initial="hidden" animate="visible"
         >
           <motion.img
-            src="" alt="Muhammad Qasim"
+            src={portrait} alt="Muhammad Qasim"
             className="w-55 md:w-70 rounded-3xl border border-(--primary-color)/30 rotate-3 transition-all duration-300 ease-in-out cursor-pointer"
             whileHover={{ scale: 1.03, rotate: 0 }}
           />

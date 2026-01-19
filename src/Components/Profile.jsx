@@ -1,5 +1,6 @@
 import React from 'react'
 import { experience, education, frontend, coreDev, deployment, designing } from '../utils/data';
+import portrait from "../assets/Images/personal-img.png";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import { Download } from 'lucide-react';
@@ -41,7 +42,7 @@ const Profile = () => {
                 >
                     <div className="w-full rounded-3xl overflow-hidden">
                         <motion.img
-                            src="" alt="Muhammad Qasim"  className="w-full h-full"
+                            src={portrait} alt="Muhammad Qasim"  className="w-full h-full"
                             initial={{ scale: 0.95, opacity: 0 }} whileInView={{ scale: 1, opacity: 1 }}
                             transition={{ duration: 0.6, ease: "easeOut" }}
                         />
