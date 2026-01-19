@@ -73,7 +73,7 @@ const ContactForm = () => {
         >
           <Link to="https://github.com/MuhammadQasimTanveer">
             <motion.div whileHover={{ scale: 1.1, color: "#6e5494" }} whileTap={{ scale: 0.95 }}
-              className="text-(--text-color)"
+              className="text-(--text-color) "
             >
               <Github className="w-6 h-6" />
             </motion.div>

@@ -13,24 +13,6 @@ const summary = [
     `My work emphasizes creating coherent solutions that balance <span class="text-(--primary-color)/80 font-normal">functionality</span> and <span class="text-(--primary-color)/80 font-normal">usability</span>, delivering real value to users, streamlining workflows, and generating a <span class="text-(--primary-color)/80 font-normal">meaningful impact</span>.`
 ];
 
-const Card = ({ title, tools }) => {
-    return (
-        <div className="h-full flex flex-col bg-(--border-color)/30 rounded-2xl px-10 py-5">
-            <h3 className="text-xl text-center text-(--secondary-color) mb-8">{title}</h3>
-            <div className="flex flex-wrap justify-center gap-7">
-                {tools.map((tool, i) => (
-                    <div key={i} className="flex flex-col items-center gap-3">
-                        <img src={tool.icon} alt={tool.name}
-                            className="w-12 h-12 cursor-pointer opacity-60 transition duration-300 hover:opacity-100 hover:scale-104"
-                        />
-                        <span className="text-xs text-(--subtext-color)">{tool.name}</span>
-                    </div>
-                ))}
-            </div>
-        </div>
-    );
-};
-
 const Profile = () => {
     return (
         <div className="max-w-6xl mx-auto px-6 py-10">
@@ -42,7 +24,7 @@ const Profile = () => {
                 >
                     <div className="w-full rounded-3xl overflow-hidden">
                         <motion.img
-                            src={portrait} alt="Muhammad Qasim"  className="w-full h-full"
+                            src={portrait} alt="Muhammad Qasim" className="w-full h-full"
                             initial={{ scale: 0.95, opacity: 0 }} whileInView={{ scale: 1, opacity: 1 }}
                             transition={{ duration: 0.6, ease: "easeOut" }}
                         />
@@ -158,18 +140,41 @@ const Profile = () => {
 
             <div className="py-10">
                 <h2 className="text-2xl font-normal text-(--primary-color) mb-6">Skills</h2>
-                <div className="w-full">
-                    <Swiper modules={[Autoplay]} slidesPerView={3} spaceBetween={20}
-                        loop={true} speed={1000} autoplay={{ delay: 2000, pauseOnMouseEnter: true }}
-                    >
-                        <SwiperSlide> <Card title="Designing" tools={designing} /> </SwiperSlide>
-                        <SwiperSlide> <Card title="Frontend" tools={frontend} /> </SwiperSlide>
-                        <SwiperSlide> <Card title="Core Development" tools={coreDev} /> </SwiperSlide>
-                        <SwiperSlide> <Card title="Deployment" tools={deployment} /> </SwiperSlide>
-                    </Swiper>
-                </div>
+                <Swiper modules={[Autoplay]} slidesPerView="auto" spaceBetween={15} loop speed={700}
+                    autoplay={{ delay: 2000, pauseOnMouseEnter: true }}
+                >
+                    <SwiperSlide className="w-90!"> <Card title="Designing" tools={designing} /> </SwiperSlide>
+                    <SwiperSlide className="w-90!"> <Card title="Frontend" tools={frontend} /> </SwiperSlide>
+                    <SwiperSlide className="w-90!"> <Card title="Core Development" tools={coreDev} /></SwiperSlide>
+                    <SwiperSlide className="w-90!"> <Card title="Deployment" tools={deployment} /> </SwiperSlide>
+                </Swiper>
+                <p className="text-sm font-light text-center text-(--primary-color)/50 mt-8">Move your mouse here to pause</p>
             </div>
         </div>
     )
 }
 export default Profile
+
+const Card = ({ title, tools }) => {
+    return (
+        <div className="h-full min-h-70 flex flex-col bg-(--border-color)/30 rounded-2xl px-10 py-5">
+            <h3 className="text-xl text-center text-(--secondary-color) mb-10"> {title} </h3>
+            {/* <div className="grid grid-cols-3 gap-7 place-items-center justify-center">
+                {tools.map((tool, i) => (
+                    <div key={i} className="flex flex-col items-center justify-center gap-2">
+                        <img src={tool.icon} alt={tool.name} className="w-11 h-11 cursor-pointer opacity-60 transition duration-300 hover:opacity-100 hover:scale-104" />
+                        <span className="text-xs text-(--subtext-color)">{tool.name}</span>
+                    </div>
+                ))}
+            </div> */}
+            <div className="flex flex-wrap justify-center gap-7">
+                {tools.map((tool, i) => (
+                    <div key={i} className="w-16 flex flex-col items-center gap-2">
+                        <img src={tool.icon} alt={tool.name} className="w-11 h-11 cursor-pointer opacity-60 transition duration-300 hover:opacity-100 hover:scale-104" />
+                        <span className="text-xs text-(--subtext-color)">{tool.name}</span>
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
+};

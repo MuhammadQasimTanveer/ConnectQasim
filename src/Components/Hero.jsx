@@ -102,7 +102,7 @@ const Hero = () => {
         >
           <motion.img
             src={portrait} alt="Muhammad Qasim"
-            className="w-55 md:w-70 rounded-3xl border border-(--primary-color)/30 rotate-3 transition-all duration-300 ease-in-out cursor-pointer"
+            className="w-55 md:w-70 rounded-3xl border border-(--primary-color)/30 rotate-1 transition-all duration-300 ease-in-out cursor-pointer"
             whileHover={{ scale: 1.03, rotate: 0 }}
           />
         </motion.div>
