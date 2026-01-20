@@ -67,21 +67,21 @@ const Navbar = () => {
         </AnimatePresence>
       </nav>
 
-      <nav className="fixed bottom-6 left-1/2 -translate-x-1/2 z-85 md:hidden flex items-end gap-2">
+      <nav className="fixed bottom-6 left-1/2 -translate-x-1/2 z-85 md:hidden flex items-end gap-1">
         <AnimatePresence>
           {isOpen && (
             <motion.div
               className="bg-black/60 backdrop-blur-xl border border-(--border-color) rounded-full p-1.5"
               exit={{ scale: 0.95, opacity: 0 }} transition={{ duration: 0.1, ease: "easeOut" }}
             >
-              <div className="flex items-center gap-5">
+              <div className="flex items-center gap-4">
                 {navItems.map((item, index) => {
                   const Icon = item.icon;
                   return (
                     <NavLink
                       key={index} to={item.path} onClick={clickSound}
                       className={({ isActive }) =>
-                        `relative p-3 rounded-full tooltip tooltip-top 
+                        `relative p-2.5 rounded-full tooltip tooltip-top 
                         ${isActive
                           ? "text-(--primary-color)/90 bg-(--dark-color)/60"
                           : "text-(--primary-color)/50 hover:bg-(--dark-color)/30"
@@ -102,7 +102,7 @@ const Navbar = () => {
           )}
         </AnimatePresence>
 
-        <motion.div className="p-1">
+        <motion.div>
           <motion.button
             onClick={() => setIsOpen(!isOpen)}
             className="bg-black/60 backdrop-blur-xl border border-(--border-color) rounded-full p-4 text-(--primary-color)/70 hover:text-(--secondary-color) transition-colors duration-300 cursor-pointer"

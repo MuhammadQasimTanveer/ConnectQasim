@@ -1,14 +1,14 @@
 import React,  { useState ,useEffect } from 'react'
-import Home from './Pages/Home'
-import About from './Pages/About'
-import initLenis from './lib/lenis'
-import Project from './Pages/Project'
-import Contact from './Pages/Contact'
-import Service from './Pages/Service'
+import Home from './Pages/Home';
+import About from './Pages/About';
+import initLenis from './lib/lenis';
+import Project from './Pages/Project';
+import Contact from './Pages/Contact';
+import Service from './Pages/Service';
 import Loader from "./Components/Loader";
-import NotFound from './Components/NotFound'
-import { Routes, Route } from 'react-router-dom'
-import ScrollToTop from './components/ScrollToTop'
+import NotFound from './Components/NotFound';
+import { Routes, Route } from 'react-router-dom';
+import ScrollToTop from "./Components/ScrollToTop";
 import ProjectDetail from "./Components/ProjectDetail";
 
 function App() {

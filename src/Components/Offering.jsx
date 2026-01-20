@@ -32,7 +32,7 @@ const container = {
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" }  }
+  show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } }
 };
 
 const Offering = () => {
@@ -41,8 +41,8 @@ const Offering = () => {
       initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} variants={container}
       className="relative max-w-5xl mx-auto py-20 px-6"
     >
-      <div className="absolute top-8 left-[40%] w-[80%] h-70 blur-3xl opacity-27 md:opacity-17 rounded-full
-        bg-linear-to-r from-(--secondary-color)/70 via-(--dark-color) to-(--border-color) pointer-events-none">
+      <div className="absolute top-8 left-[35%] md:left-[40%] w-[60%] h-75 blur-3xl opacity-25 md:opacity-22 rounded-full
+        bg-linear-to-r from-(--secondary-color)/70 via-(--dark-color) to-(--border-color) pointer-events-none overflow-hidden">
       </div>
 
       <div className="relative z-10">
